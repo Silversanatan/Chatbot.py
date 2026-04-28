@@ -1,0 +1,135 @@
+:root {
+    --bg-color: #0b0c10;
+    --neon-blue: #66fcf1;
+    --neon-purple: #c5a3ff;
+    --neon-pink: #f064bb;
+    --text-color: #c5c6c7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    user-select: none;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.game-container {
+    width: 800px;
+    height: 300px;
+    position: relative;
+    background: radial-gradient(circle at center, #1f2833 0%, #0b0c10 100%);
+    border: 2px solid var(--neon-blue);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.4), inset 0 0 20px rgba(102, 252, 241, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    z-index: 10;
+    color: var(--neon-purple);
+    text-shadow: 0 0 5px var(--neon-purple);
+}
+
+#score-val, #hi-val {
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+#start-screen, #game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 20;
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 3rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+#world {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ground {
+    position: absolute;
+    bottom: 30px;
+    width: 200%;
+    height: 4px;
+    background: var(--neon-blue);
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+#dino {
+    width: 40px;
+    height: 40px;
+    background-color: var(--neon-purple);
+    box-shadow: 0 0 15px var(--neon-purple);
+    border-radius: 8px;
+    position: absolute;
+    left: 50px;
+    bottom: 34px;
+    z-index: 5;
+}
+
+.obstacle {
+    width: 20px;
+    height: 40px;
+    background-color: var(--neon-pink);
+    box-shadow: 0 0 15px var(--neon-pink);
+    border-radius: 4px;
+    position: absolute;
+    bottom: 34px;
+    z-index: 5;
+}
+
+.obstacle.tall {
+    height: 60px;
+}
+.obstacle.wide {
+    width: 40px;
+}

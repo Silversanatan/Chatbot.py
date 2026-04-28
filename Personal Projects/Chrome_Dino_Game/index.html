@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Dino Runner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div id="ui-layer">
+            <div id="score">SCORE <span id="score-val">0</span></div>
+            <div id="high-score">HI <span id="hi-val">0</span></div>
+        </div>
+        
+        <div id="game-over" class="hidden">
+            <h1>SYSTEM FAILURE</h1>
+            <p>SPACE OR TAP TO RESTART</p>
+        </div>
+
+        <div id="start-screen">
+            <h1>NEON RUNNER</h1>
+            <p>PRESS SPACE TO START</p>
+        </div>
+
+        <div id="world">
+            <div id="dino"></div>
+            <!-- Ground and obstacles added via JS -->
+            <div class="ground"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
